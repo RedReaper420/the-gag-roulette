@@ -106,6 +106,7 @@
 	{{/* Calculating the total chance of the selected type of gag being chosen in % */}}
 	{{$calced_prob_gag := mult $calced_prob_category $calced_prob_kind $calced_prob_stuffing 100.0}}
 	
+	{{/* The chance of being gagged and the chance of choosing a certain kind of gag are separated on purpose */}}
 	{{$gag_msg_header := ""}}
 	{{if eq $gagging_type "Roulette"}}
 		{{$gag_msg_header = printf "**%s wins a gag!** [Win chance: %.2f%%]" $user_mention $calced_prob_receive_gag}}
