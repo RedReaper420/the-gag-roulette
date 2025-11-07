@@ -137,7 +137,7 @@
 	{{end}}
 	
     {{/* Set the authentic sticker for the gagging message */}}
-    {{/* If you don't have one, you can use 773904449440579624, that's the "Lonely Leif - Eating" (a blushing leaf with a mouthful of ice cream */}}
+    {{/* If you don't have one, you can use 773904449440579624, that's the "Lonely Leif - Eating" (a blushing leaf with a mouthful of ice cream ) */}}
     {{$sticker_id := 1375929269217136690}}
 	{{sendMessage nil ( complexMessage "sticker" $sticker_id )}}
 	{{sendMessage nil ( joinStr "\n" (cslice $gag_msg_header $gag_msg_main $gag_msg_cantgag) )}}
