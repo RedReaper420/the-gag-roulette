@@ -16,6 +16,10 @@
 	{{end}}
 {{end}}
 
+{{$msg_no_spicy := "You don't have the 🌶️ **NFWS role** (**@SPICY**) to have the Gag Curse!"}}
+{{$msg_curse_lifted := ( printf "**The Gag Curse** was **lifted** from %s! 😜" .User.Mention )}}
+{{$msg_curse_applied := ( printf "**The Gag Curse** was **applied** on %s! 😷" .User.Mention )}}
+
 {{if eq $command "status"}}
 	{{$not := "not "}}
 	{{$emoji := "😜"}}
@@ -23,40 +27,40 @@
 		{{$not = ""}}
 		{{$emoji = "😷"}}
 	{{end}}
-{{.User.Mention}}'s **Gag Curse** status: **{{$not}}cursed**! {{$emoji}}
+	{{sendMessage nil ( printf "%s's **Gag Curse** status: **%scursed**! %s" .User.Mention $not $emoji )}}
 {{else if eq $command "toggle"}}
 	{{if eq $has_spicy false}}
 		{{sendMessage nil ( complexMessage "sticker" 1375885651676893326 )}}
-You don't have the 🌶️ **NFWS role** (**@SPICY**) to have the Gag Curse!
+		{{sendMessage nil ( $msg_no_spicy )}}
 		{{return}}
 	{{end}}
 	
 	{{if eq $has_curse true}}
 		{{removeRoleName "Gag Curse"}}
-**The Gag Curse** was **lifted** from {{.User.Mention}}! 😜
+		{{sendMessage nil ( $msg_curse_lifted )}}
 	{{else}}
 		{{addRoleName "Gag Curse"}}
-**The Gag Curse** was **applied** on {{.User.Mention}}! 😷
+		{{sendMessage nil ( $msg_curse_applied )}}
 	{{end}}
 {{else if eq $command "off"}}
 	{{if eq $has_curse true}}
 		{{removeRoleName "Gag Curse"}}
-**The Gag Curse** was **lifted** from {{.User.Mention}}! 😜
+		{{sendMessage nil ( $msg_curse_lifted )}}
 	{{else}}
-There's **no curse** to begin with, {{.User.Mention}}! 🤔
+		{{sendMessage nil ( printf "There's **no curse** to begin with, %s! 🤔" .User.Mention )}}
 	{{end}}
 {{else if eq $command "on"}}
 	{{if eq $has_spicy false}}
 		{{sendMessage nil ( complexMessage "sticker" 1375885651676893326 )}}
-You don't have the 🌶️ **NFWS role** (**@SPICY**) to have the Gag Curse!
+		{{sendMessage nil ( $msg_no_spicy )}}
 		{{return}}
 	{{end}}
 	
 	{{if eq $has_curse false}}
 		{{addRoleName "Gag Curse"}}
-**The Gag Curse** was **applied** on {{.User.Mention}}! 😷
+		{{sendMessage nil ( $msg_curse_applied )}}
 	{{else}}
-You're already **cursed**, {{.User.Mention}}! 😷
+		{{sendMessage nil ( printf "You're already **cursed**, %s! 😷" .User.Mention )}}
 	{{end}}
 {{else if eq $command "help"}}
 # The Gag Curse 😷
@@ -75,5 +79,5 @@ Available commands are:
 * When gagged, you're encouraged to modify your speech accordingly for a short while (gag-talk, gag-speech, mmph-ing, you get it).
 * Only if you're **@Consent to Mute**, you'll receive a __1 minute timeout__ upon gagging (see Reaction Roles channel).
 {{else}}
-Invalid command! Available commands are: `status` `toggle` `on` `off` `help`
+	{{sendMessage nil ( "Invalid command! Available commands are: `status` `toggle` `on` `off` `help`" )}}
 {{end}}
