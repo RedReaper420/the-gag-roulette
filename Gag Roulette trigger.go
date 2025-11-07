@@ -1,7 +1,7 @@
 {{/* TRIGGER TYPE: REGEX */}}
-{{/* TRIGGER: `.*`*/}}
-{{/* CHANNELS: `#😷the-gag-curse`*/}}
-{{/* ROLES: ALL*/}}
+{{/* TRIGGER: `.*` */}}
+{{/* CHANNELS: `#😷the-gag-curse` */}}
+{{/* ROLES: ALL */}}
 
 {{$is_consent := hasRoleName "Consent to Mute"}}
 {{$is_admin := hasPermissions .Permissions.ModerateMembers}}

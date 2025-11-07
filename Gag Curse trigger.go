@@ -1,7 +1,7 @@
 {{/* TRIGGER TYPE: REGEX */}}
-{{/* TRIGGER: `.*`*/}}
-{{/* CHANNELS: ALL*/}}
-{{/* ROLES: `Gag Curse`*/}}
+{{/* TRIGGER: `.*` */}}
+{{/* CHANNELS: ALL */}}
+{{/* ROLES: `Gag Curse` */}}
 
 {{$has_spicy := hasRoleName "SPICY"}}
 {{if eq $has_spicy false}}
