@@ -1,6 +1,6 @@
 # "The Gag Roulette" and "The Gag Curse" system
 > [!WARNING]
-> This is a **NSFW** chat system, oriented for adults.
+> This is a **NSFW** chat system, oriented on adults.
 
 This is a system of Custom Commands for [YAGPDB.xyz Discord Bot](https://yagpdb.xyz/), implementing a BDSM-themed textual gagging mechanics on a Discord server. The participating users are "receiving" a random gag from a bot, and getting a 1 minite long timeout (if the user has consented beforehand).
 * In ⁠the channel dedicated for **the Gag Roulette**, any sent message with high probability will "reward" the user with a random gag. There are several gags categories and plenty of gags kinds, all with uneven probabilities to receive.
