@@ -1,6 +1,6 @@
 {{/* TRIGGER TYPE: REGEX */}}
 {{/* TRIGGER: `.*` */}}
-{{/* CHANNELS: `#😷the-gag-curse` */}}
+{{/* CHANNELS: `#😷the-gag-roulette` */}}
 {{/* ROLES: ALL */}}
 
 {{$is_consent := hasRoleName "Consent to Mute"}}
