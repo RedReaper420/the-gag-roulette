@@ -11,7 +11,7 @@ This is a system of Custom Commands for [YAGPDB.xyz Discord Bot](https://yagpdb.
 * Add the NSFW access role (`SPICY`).
 * Add the "gag curse" role (`Gag Curse`).
 * Add the consented to be timeouted role (`Consent to Mute`).
-* Add the channel for the "roulette" game (`😷the-gag-curse`), available for users with the NSFW role.
+* Add the channel for the "roulette" game (`😷the-gag-roulette`), available for users with the NSFW role.
 * Add the YAGPDB.xyz bot.
   * Enable timeouts.
-  * Importe these Custom Commands and tweak them for one's needs.
+  * Import these Custom Commands and tweak them for one's needs.
