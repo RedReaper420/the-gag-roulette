@@ -38,7 +38,7 @@
 	{{sendMessage nil ( printf "%s's **Gag Curse** status: **%scursed**! %s" .User.Mention $not $emoji )}}
 {{else if eq $command "toggle"}}
 	{{if eq $has_spicy false}}
-		{{sendMessage nil ( complexMessage "sticker" $sticker_id )}}
+		{{sendMessage nil ( complexMessage "content" "-# · · ·" "sticker" $sticker_id )}}
 		{{sendMessage nil ( $msg_no_spicy )}}
 		{{return}}
 	{{end}}
@@ -59,7 +59,7 @@
 	{{end}}
 {{else if eq $command "on"}}
 	{{if eq $has_spicy false}}
-		{{sendMessage nil ( complexMessage "sticker" $sticker_id )}}
+		{{sendMessage nil ( complexMessage "content" "-# · · ·" "sticker" $sticker_id )}}
 		{{sendMessage nil ( $msg_no_spicy )}}
 		{{return}}
 	{{end}}
