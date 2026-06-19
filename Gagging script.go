@@ -21,7 +21,11 @@
 {{$roll := randInt 1000}}
 {{if lt $roll $chance}}
 	{{/* Defining gag categories */}}
-	{{$gags_categories := sdict "exotic" 10 "deliberate" 40 "improvised" 50}}
+	{{$gags_categories := sdict 
+		"exotic" 10 
+		"deliberate" 40 
+		"improvised" 50
+	}}
 	
 	{{/* Calculating total weights for gags categories */}}
 	{{$weights := 0}}
@@ -48,11 +52,40 @@
 	{{$gags := sdict "gag_kind" 1}}
 	{{$a := "an"}}
 	{{if eq $gag_category "exotic"}}
-		{{$gags = sdict "glue" 2 "slime" 1 "honey" 1 "apple" 1 "carrot" 1 "lemon" 1 "cucumber" 1 "stick grenade" 1 "chopsticks" 3}}
+		{{$gags = sdict 
+			"glue" 2 
+			"slime" 1 
+			"honey" 1 
+			"apple" 1 
+			"carrot" 1 
+			"lemon" 1 
+			"cucumber" 1 
+			"stick grenade" 1 
+			"chopsticks" 3
+		}}
 	{{else if eq $gag_category "improvised"}}
-		{{$gags = sdict "tape wrap" 3 "tape strip" 4 "microfoam wrap" 1 "microfoam strip" 2 "OTM cloth" 4 "cloth cleave" 4 "cloth knot" 3 "tegaderm strip" 2}}
+		{{$gags = sdict 
+			"tape wrap" 3 
+			"tape strip" 4 
+			"microfoam wrap" 1 
+			"microfoam strip" 2 
+			"OTM cloth" 4 
+			"cloth cleave" 4 
+			"cloth knot" 3 
+			"tegaderm strip" 2
+		}}
 	{{else if eq $gag_category "deliberate"}}
-		{{$gags = sdict "ball" 4 "wiffle" 4 "bit" 2 "panel" 3 "plug" 2 "ring" 3 "inflatable" 1 "penis" 1 "gwen hood" 1}}
+		{{$gags = sdict 
+			"ball" 4 
+			"wiffle" 4 
+			"bit" 2 
+			"panel" 3 
+			"plug" 2 
+			"ring" 3 
+			"inflatable" 1 
+			"penis" 1 
+			"gwen hood" 1
+		}}
 		{{$a = "a"}}
 	{{end}}
 	
@@ -78,7 +111,17 @@
 	{{end}}
 	
 	{{/* Defining the list of mouth stuffings for an improvised gag */}}
-	{{$stuffings := sdict "no" 30 "a rag" 25 "a hot sauce coated rag" 3 "a sponge" 20 "a sock" 20 "a hot sauce coated sock" 2 "a panty" 15 "a hot sauce coated panty" 2 "a stress ball" 10}}
+	{{$stuffings := sdict 
+		"no" 30 
+		"a rag" 25 
+		"a hot sauce coated rag" 3 
+		"a sponge" 20 
+		"a sock" 20 
+		"a hot sauce coated sock" 2 
+		"a panty" 15 
+		"a hot sauce coated panty" 2 
+		"a stress ball" 10
+	}}
 	
 	{{/* Calculating total weights for stuffings */}}
 	{{$weights = 0}}
@@ -120,6 +163,7 @@
 	{{else if eq $gagging_type "Curse"}}
 		{{$title = "cursed one"}}
 	{{end}}
+	
 	{{$stuffing_str := ""}}
 	{{if eq $gag_category "improvised"}}
 		{{$stuffing_str = printf " with **%s** mouth stuffing" $stuffing}}

@@ -14,4 +14,9 @@
 
 {{/* Set the actual ID of the gagging script on your server instead */}}
 {{$gagging_cmd_id := 9}}
-{{execCC $gagging_cmd_id nil 0 (sdict "GaggingType" "Roulette" "UserID" .User.ID "UserMention" .User.Mention "CanMute" $can_mute)}}
+{{execCC $gagging_cmd_id nil 0 (sdict 
+	"GaggingType" "Roulette" 
+	"UserID" .User.ID 
+	"UserMention" .User.Mention 
+	"CanMute" $can_mute
+)}}
